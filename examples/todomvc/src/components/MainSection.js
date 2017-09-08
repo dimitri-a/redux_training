@@ -16,7 +16,7 @@ export default class MainSection extends Component {
     actions: PropTypes.object.isRequired
   }
 
-  state = { filter: SHOW_ALL }
+  state = { filter: SHOW_COMPLETED }
 
   handleClearCompleted = () => {
     this.props.actions.clearCompleted()
@@ -58,6 +58,8 @@ export default class MainSection extends Component {
     const { todos, actions } = this.props
     const { filter } = this.state
 
+    //todo remove
+    debugger;
     const filteredTodos = todos.filter(TODO_FILTERS[filter])
     const completedCount = todos.reduce((count, todo) =>
       todo.completed ? count + 1 : count,

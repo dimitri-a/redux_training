@@ -31,7 +31,12 @@ export default class Footer extends Component {
 
   renderFilterLink(filter) {
     const title = FILTER_TITLES[filter]
+    //todo remove
+    debugger;
     const { filter: selectedFilter, onShow } = this.props
+
+    //todo remove
+    debugger;
 
     return (
       <a className={classnames({ selected: filter === selectedFilter })}
@@ -43,7 +48,7 @@ export default class Footer extends Component {
   }
 
   renderClearButton() {
-    const { completedCount, onClearCompleted } = this.propsgit
+    const { completedCount, onClearCompleted } = this.props
     if (completedCount > 0) {
       return (
         <button className="clear-completed"
