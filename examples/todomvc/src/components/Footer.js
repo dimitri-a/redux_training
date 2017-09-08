@@ -43,7 +43,7 @@ export default class Footer extends Component {
   }
 
   renderClearButton() {
-    const { completedCount, onClearCompleted } = this.props
+    const { completedCount, onClearCompleted } = this.propsgit
     if (completedCount > 0) {
       return (
         <button className="clear-completed"
@@ -65,6 +65,7 @@ export default class Footer extends Component {
             </li>
           )}
         </ul>
+
         {this.renderClearButton()}
       </footer>
     )
