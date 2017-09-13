@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/TodoFilters'
+import {SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE} from '../constants/TodoFilters'
 
 const FILTER_TITLES = {
   [SHOW_ALL]: 'All',
@@ -19,7 +19,7 @@ export default class Footer extends Component {
   }
 
   renderTodoCount() {
-    const { activeCount } = this.props
+    const {activeCount} = this.props
     const itemWord = activeCount === 1 ? 'item' : 'items'
 
     return (
@@ -31,28 +31,27 @@ export default class Footer extends Component {
 
   renderFilterLink(filter) {
     const title = FILTER_TITLES[filter]
-    //todo remove
-    debugger;
-    const { filter: selectedFilter, onShow } = this.props
 
-    //todo remove
+    const {filter: selectedFilter, onShow} = this.props
+
+//todo remove
     debugger;
 
     return (
-      <a className={classnames({ selected: filter === selectedFilter })}
-         style={{ cursor: 'pointer' }}
-         onClick={() => onShow(filter)}>
+      <a
+        style={{cursor: 'pointer'}}
+        onClick={() => onShow(filter)}>
         {title}
       </a>
     )
   }
 
   renderClearButton() {
-    const { completedCount, onClearCompleted } = this.props
+    const {completedCount, onClearCompleted} = this.props
     if (completedCount > 0) {
       return (
         <button className="clear-completed"
-                onClick={onClearCompleted} >
+                onClick={onClearCompleted}>
           Clear completed
         </button>
       )
@@ -64,7 +63,7 @@ export default class Footer extends Component {
       <footer className="footer">
         {this.renderTodoCount()}
         <ul className="filters">
-          {[ SHOW_ALL, SHOW_ACTIVE, SHOW_COMPLETED ].map(filter =>
+          {[SHOW_ALL, SHOW_ACTIVE, SHOW_COMPLETED].map(filter =>
             <li key={filter}>
               {this.renderFilterLink(filter)}
             </li>
