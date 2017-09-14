@@ -9,15 +9,15 @@ export default class Header extends Component {
   }
 
   handleSave = text => {
-    if (text.length > 0) {
+    console.log('handlesave');
+
       this.props.addTodo(text);
-    }
+
   }
 
   render = () => {
     return (
       <header className="header">
-
         <TodoTextInput onSave={this.handleSave}>
         </TodoTextInput>
       </header>)

@@ -13,7 +13,7 @@ describe('Header enzyme style', () => {
 
     let cb = shallow(<Header {...props} />)
 
-    console.log('cb.debug()=', cb.debug());
+   // console.log('cb.debug()=', cb.debug());
 
     expect(cb.text()).toEqual('<TodoTextInput />');
     expect(cb.hasClass('header')).toEqual(true);
@@ -39,10 +39,13 @@ describe('Header enzyme style', () => {
 
     console.log('cb.debug()=', cb.debug());
 
-    cb.find('TodoTextInput').simulate('onSave');
+    expect(props.addTodo).not.toBeCalled()
+
+    cb.find('TodoTextInput').simulate("onSave",{text:"fsdhsd"});
+
+    expect(props.addTodo).toBeCalled()
 
     //console.log('cb =====', cb.find('input'));
-    //expect(props.addTodo).toBeCalled()
 
     //todo type 6 length of component/element
     // expect(cb.text()).toEqual('on');
