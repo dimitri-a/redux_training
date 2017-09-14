@@ -5,7 +5,7 @@ import Header from './Header';
 
 describe('Header enzyme style', () => {
 
-  xit('does it render', () => {
+  it('does it render', () => {
 
     const props = {
       addTodo: jest.fn()
