@@ -5,7 +5,7 @@ import Header from './Header';
 
 describe('Header enzyme style', () => {
 
-  it('does it render', () => {
+  xit('does it render', () => {
 
     const props = {
       addTodo: jest.fn()
@@ -41,7 +41,8 @@ describe('Header enzyme style', () => {
 
     expect(props.addTodo).not.toBeCalled()
 
-    cb.find('TodoTextInput').simulate("onSave",{text:"fsdhsd"});
+    //todo this is how you simulate this event!!!
+    cb.find('TodoTextInput').simulate("save","fsdhsd");
 
     expect(props.addTodo).toBeCalled()
 

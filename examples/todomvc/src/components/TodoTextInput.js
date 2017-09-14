@@ -20,7 +20,7 @@ export default class TodoTextInput extends Component {
     const text = e.target.value.trim()
     if (e.which === 13) {
       console.log('todotextipunt onsave');
-      this.props.onSave(text)
+      this.props.onSave()
       if (this.props.newTodo) {
         this.setState({ text: '' })
       }

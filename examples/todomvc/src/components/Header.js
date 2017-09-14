@@ -9,10 +9,11 @@ export default class Header extends Component {
   }
 
   handleSave = text => {
-    console.log('handlesave');
 
+    if (text.length > 0) {
+      console.log('handlesave',text);
       this.props.addTodo(text);
-
+    }
   }
 
   render = () => {
