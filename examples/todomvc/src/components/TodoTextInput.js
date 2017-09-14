@@ -16,8 +16,10 @@ export default class TodoTextInput extends Component {
   }
 
   handleSubmit = e => {
+    console.log('TodoTextInput handlesubmit');
     const text = e.target.value.trim()
     if (e.which === 13) {
+      console.log('todotextipunt onsave');
       this.props.onSave(text)
       if (this.props.newTodo) {
         this.setState({ text: '' })
@@ -26,16 +28,19 @@ export default class TodoTextInput extends Component {
   }
 
   handleChange = e => {
+    console.log('TodoTextInput handlechange');
     this.setState({ text: e.target.value })
   }
 
   handleBlur = e => {
+    console.log('TodoTextInput handleblur');
     if (!this.props.newTodo) {
       this.props.onSave(e.target.value)
     }
   }
 
   render() {
+    console.log('TodoTextInput render');
     return (
       <input className={
         classnames({

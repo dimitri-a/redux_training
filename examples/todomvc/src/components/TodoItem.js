@@ -30,8 +30,8 @@ export default class TodoItem extends Component {
 
   render() {
     const { todo, completeTodo, deleteTodo } = this.props
-    
-    console.log('this.props=',this.props);
+
+    //console.log('this.props=',this.props);
 
     let element
     if (this.state.editing) {
