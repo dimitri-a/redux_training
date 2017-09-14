@@ -30,6 +30,8 @@ export default class TodoItem extends Component {
 
   render() {
     const { todo, completeTodo, deleteTodo } = this.props
+    
+    console.log('this.props=',this.props);
 
     let element
     if (this.state.editing) {
@@ -48,6 +50,7 @@ export default class TodoItem extends Component {
           <label onDoubleClick={this.handleDoubleClick}>
             {todo.text}
           </label>
+
           <button className="destroy"
                   onClick={() => deleteTodo(todo.id)} />
         </div>

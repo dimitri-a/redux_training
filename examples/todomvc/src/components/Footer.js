@@ -34,9 +34,6 @@ export default class Footer extends Component {
 
     const {filter: selectedFilter, onShow} = this.props
 
-//todo remove
-    debugger;
-
     return (
       <a
         style={{cursor: 'pointer'}}
