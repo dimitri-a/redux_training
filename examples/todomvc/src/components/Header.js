@@ -1,19 +1,23 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import TodoTextInput from './TodoTextInput'
+import Invoer from './Invoer';
 
 export default class Header extends Component {
   static propTypes = {
     addTodo: PropTypes.func.isRequired
   }
 
-  handleSave(text){
+  handleSave = (text) => {
     //todo remove
-    debugger;
+   // debugger;
 
     console.log(text);
 
-    if (text.length> 0)
+    if (text!=='')
+      //todo remove
+      //debugger;
+    console.log('this.props',this.props);
       this.props.addTodo(text);
 
   }
@@ -21,7 +25,7 @@ export default class Header extends Component {
   render() {
     return (
       <header>
-        <input type="text"  onClick={(input) => this.handleSave(input.target.value)}/>
+        <Invoer onSave={this.handleSave}></Invoer>
       </header>
     )
   }

@@ -25,8 +25,13 @@ describe('Header enzyme style', () => {
 
     const wrapper = shallow(<Header {...props}/>)
 
-    wrapper.find('input').simulate('onClick','hsjkdhfjds');
+    wrapper.find('input').simulate('click','');
+
     expect(props.addTodo).not.toBeCalled();
+
+    wrapper.find('input').simulate('click','hsdjkfhsd');
+
+    //expect(props.addTodo).toBeCalled();
 
   });
 
