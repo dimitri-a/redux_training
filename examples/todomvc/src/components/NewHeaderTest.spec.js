@@ -25,11 +25,20 @@ describe('Header enzyme style', () => {
 
     const wrapper = shallow(<Header {...props}/>)
 
-    wrapper.find('input').simulate('change');
-
-    expect(props.addTodo).toBeCalled();
+    wrapper.find('input').simulate('onClick','hsjkdhfjds');
+    expect(props.addTodo).not.toBeCalled();
 
   });
+
+
+  xit('should call addTodo if length of text is greater than 0', () => {
+    // const { output, props } = setup()
+    // const input = output.props.children[1]
+    // input.props.onSave('')
+    // expect(props.addTodo).not.toBeCalled()
+    // input.props.onSave('Use Redux')
+    // expect(props.addTodo).toBeCalled()
+  })
 
 
 });

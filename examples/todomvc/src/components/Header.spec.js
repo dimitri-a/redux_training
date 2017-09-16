@@ -23,7 +23,7 @@ const setup = () => {
 describe('components', () => {
   describe('Header', () => {
 
-    xit('should render correctly', () => {
+    it('should render correctly', () => {
       const { output } = setup()
 
       expect(output.type).toBe('header')

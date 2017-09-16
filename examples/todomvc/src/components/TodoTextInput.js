@@ -19,7 +19,7 @@ export default class TodoTextInput extends Component {
     console.log('TodoTextInput handlesubmit');
     const text = e.target.value.trim()
     if (e.which === 13) {
-      console.log('todotextipunt onsave');
+      console.log('todotextipunt onsave ie click enter');
       this.props.onSave(text)
       if (this.props.newTodo) {
         this.setState({ text: '' })
@@ -42,7 +42,7 @@ export default class TodoTextInput extends Component {
   }
 
   render() {
-    console.log('TodoTextInput render');
+    //console.log('TodoTextInput render');
     return (
       <input className={
         classnames({
