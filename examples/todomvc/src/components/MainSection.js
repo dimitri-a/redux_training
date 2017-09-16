@@ -12,4 +12,27 @@ const TODO_FILTERS = {
 
 export default class MainSection extends Component {
 
+  static propTypes = {
+    todos: PropTypes.func.isRequired,
+    actions: PropTypes.func.isRequired,
+
+  }
+
+  render = () => {
+
+    const todos = this.props.todos.map
+    (
+      (todo) => (
+        <p> {todo.text}</p>
+      )
+    )
+
+    return <div>
+      <ul>
+        {todos}
+      </ul>
+
+    </div>
+  }
+
 }

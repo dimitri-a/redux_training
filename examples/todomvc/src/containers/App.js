@@ -6,11 +6,11 @@ import Header from '../components/Header'
 import MainSection from '../components/MainSection'
 import * as TodoActions from '../actions'
 
-const App = ({actions}) => (
+const App = ({actions,todos}) => (
   <div>
 
     <Header addTodo={actions.addTodo}></Header>
-    {/*<MainSection actions={actions}></MainSection>*/}
+    <MainSection actions={actions} todos={todos}></MainSection>
 
   </div>
 )

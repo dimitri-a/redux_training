@@ -15,10 +15,12 @@ describe('Header enzyme style', () => {
     const renderer = createRenderer();
     renderer.render(<Header {...props} />)
     const output = renderer.getRenderOutput()
-    console.log('output=',output.props.children);;
+    console.log('output=',output.props.className);;
 
     //todo expect component top level type
     expect(output.type).toBe('header');
+    expect(output.props.className).toBe('header')
+
 
     output.props.children.props.onSave('');
     expect(props.addTodo).not.toBeCalled()

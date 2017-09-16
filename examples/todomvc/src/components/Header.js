@@ -17,7 +17,7 @@ export default class Header extends Component {
 
   render() {
     return (
-      <header>
+      <header className="header">
         <Invoer onSave={this.handleSave}></Invoer>
       </header>
     )
