@@ -27,7 +27,7 @@ export default class MainSection extends Component {
       )
     )
 
-    return <div>
+    return <div className="todo-list">
       <ul>
         {todos}
       </ul>

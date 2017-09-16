@@ -40,14 +40,14 @@ const setup = propOverrides => {
 
 describe('components', () => {
   describe('MainSection', () => {
-    it('should render container', () => {
+    xit('should render container', () => {
       const { output } = setup()
       expect(output.type).toBe('section')
       expect(output.props.className).toBe('main')
     })
 
     describe('toggle all input', () => {
-      it('should render', () => {
+      xit('should render', () => {
         const { output } = setup()
         const [ toggle ] = output.props.children
         expect(toggle.type).toBe('input')
@@ -55,7 +55,7 @@ describe('components', () => {
         expect(toggle.props.checked).toBe(false)
       })
 
-      it('should be checked if all todos completed', () => {
+      xit('should be checked if all todos completed', () => {
         const { output } = setup({ todos: [
           {
             text: 'Use Redux',
@@ -68,7 +68,7 @@ describe('components', () => {
         expect(toggle.props.checked).toBe(true)
       })
 
-      it('should call completeAll on change', () => {
+      xit('should call completeAll on change', () => {
         const { output, props } = setup()
         const [ toggle ] = output.props.children
         toggle.props.onChange({})
@@ -77,7 +77,7 @@ describe('components', () => {
     })
 
     describe('footer', () => {
-      it('should render', () => {
+      xit('should render', () => {
         const { output } = setup()
         const [ , , footer ] = output.props.children
         expect(footer.type).toBe(Footer)
@@ -86,7 +86,7 @@ describe('components', () => {
         expect(footer.props.filter).toBe(SHOW_ALL)
       })
 
-      it('onShow should set the filter', () => {
+      xit('onShow should set the filter', () => {
         const { output, renderer } = setup()
         const [ , , footer ] = output.props.children
         footer.props.onShow(SHOW_COMPLETED)
@@ -95,7 +95,7 @@ describe('components', () => {
         expect(updatedFooter.props.filter).toBe(SHOW_COMPLETED)
       })
 
-      it('onClearCompleted should call clearCompleted', () => {
+      xit('onClearCompleted should call clearCompleted', () => {
         const { output, props } = setup()
         const [ , , footer ] = output.props.children
         footer.props.onClearCompleted()
@@ -104,7 +104,7 @@ describe('components', () => {
     })
 
     describe('todo list', () => {
-      it('should render', () => {
+      xit('should render', () => {
         const { output, props } = setup()
         const [ , list ] = output.props.children
         expect(list.type).toBe('ul')
@@ -115,7 +115,7 @@ describe('components', () => {
         })
       })
 
-      it('should filter items', () => {
+      xit('should filter items', () => {
         const { output, renderer, props } = setup()
         const [ , , footer ] = output.props.children
         footer.props.onShow(SHOW_COMPLETED)
