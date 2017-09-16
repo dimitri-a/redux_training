@@ -5,16 +5,22 @@ import TodoTextInput from './TodoTextInput'
 export default class Header extends Component {
 
   static propTypes = {
-    addTodo: PropTypes.func.isRequired,
+    addTodo: PropTypes.func.isRequired
   }
 
-  handleSubmit() {
-    console.log('handlesubmit');
+  handleSave = () => {
+    //todo remove
+    debugger;
 
+    if (this.textInput.value != '') {
+      this.props.addTodo(this.textInput.value)
+    }
   }
 
   render() {
-    return <input type="text" onKeyDown={this.handleSubmit}/>
+    return (
+      <input ref={(input) =>{this.textInput =input;}} type="text" onChange={this.handleSave}/>
+    )
   }
 
 
