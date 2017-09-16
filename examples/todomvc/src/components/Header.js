@@ -12,14 +12,18 @@ export default class Header extends Component {
     //todo remove
     debugger;
 
-    if (this.textInput.value != '') {
-      this.props.addTodo(this.textInput.value)
-    }
+   // if (this.textInput.value != '') {
+      this.props.addTodo('test')
+    //}
   }
 
   render() {
     return (
-      <input ref={(input) =>{this.textInput =input;}} type="text" onChange={this.handleSave}/>
+      <header>
+        <input ref={(input) => {
+          this.textInput = input;
+        }} type="text" onChange={this.handleSave}/>
+      </header>
     )
   }
 

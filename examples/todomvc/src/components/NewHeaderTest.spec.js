@@ -5,28 +5,16 @@ import Header from './Header';
 
 describe('Header enzyme style', () => {
 
-  xit('does it render', () => {
+  it('does it render', () => {
 
     const props = {
-      addTodo: jest.fn()
+      addTodo: () => {
+      }
     }
 
-    let cb = shallow(<Header {...props} />)
+    const wrapper = shallow(<Header {...props}/>)
 
-   // console.log('cb.debug()=', cb.debug());
-
-    expect(cb.text()).toEqual('<TodoTextInput />');
-    expect(cb.hasClass('header')).toEqual(true);
-
-    //cb.find('input').simulate('change');
-
-    //console.log('cb =====', cb.find('input'));
-    //expect(props.onChange).toBeCalled()
-
-    //todo type 6 length of component/element
-    // expect(cb.text()).toEqual('on');
-
-
+    expect(wrapper.find('header').length).toEqual(1);
   });
 
   it('should call addTodo if length of text is greater than 0', () => {
@@ -35,22 +23,11 @@ describe('Header enzyme style', () => {
       addTodo: jest.fn()
     }
 
-    let cb = shallow(<Header {...props} />)
+    const wrapper = shallow(<Header {...props}/>)
 
-    console.log('cb.debug()=', cb.debug());
+    wrapper.find('input').simulate('change');
 
-    expect(props.addTodo).not.toBeCalled()
-
-    //todo this is how you simulate this event!!!
-    cb.find('TodoTextInput').simulate("save","fsdhsd");
-
-    expect(props.addTodo).toBeCalled()
-
-    //console.log('cb =====', cb.find('input'));
-
-    //todo type 6 length of component/element
-    // expect(cb.text()).toEqual('on');
-
+    expect(props.addTodo).toBeCalled();
 
   });
 
