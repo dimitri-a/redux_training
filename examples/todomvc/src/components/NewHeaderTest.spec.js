@@ -1,6 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import Header from './Header';
+import { createRenderer } from 'react-test-renderer/shallow';
 
 
 describe('Header enzyme style', () => {
@@ -8,32 +9,26 @@ describe('Header enzyme style', () => {
   it('does it render', () => {
 
     const props = {
-      addTodo: () => {
-      }
-    }
-
-    const wrapper = shallow(<Header {...props}/>)
-
-    expect(wrapper.find('header').length).toEqual(1);
-  });
-
-  it('should call addTodo if length of text is greater than 0', () => {
-
-    const props = {
       addTodo: jest.fn()
     }
 
-    const wrapper = shallow(<Header {...props}/>)
+    const renderer = createRenderer();
+    renderer.render(<Header {...props} />)
+    const output = renderer.getRenderOutput()
+    console.log('output=',output.props.children);;
 
-    wrapper.find('input').simulate('click','');
+    //todo expect component top level type
+    expect(output.type).toBe('header');
 
-    expect(props.addTodo).not.toBeCalled();
+    output.props.children.props.onSave('');
+    expect(props.addTodo).not.toBeCalled()
+    //expect(output.props.children.props.onSave).toBe('div');
 
-    wrapper.find('input').simulate('click','hsdjkfhsd');
-
-    //expect(props.addTodo).toBeCalled();
 
   });
+
+
+
 
 
   xit('should call addTodo if length of text is greater than 0', () => {
