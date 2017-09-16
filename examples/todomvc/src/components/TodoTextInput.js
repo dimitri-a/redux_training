@@ -20,7 +20,7 @@ export default class TodoTextInput extends Component {
     const text = e.target.value.trim()
     if (e.which === 13) {
       console.log('todotextipunt onsave');
-      this.props.onSave()
+      this.props.onSave(text)
       if (this.props.newTodo) {
         this.setState({ text: '' })
       }
@@ -35,6 +35,8 @@ export default class TodoTextInput extends Component {
   handleBlur = e => {
     console.log('TodoTextInput handleblur');
     if (!this.props.newTodo) {
+      //todo remove
+      debugger;
       this.props.onSave(e.target.value)
     }
   }
